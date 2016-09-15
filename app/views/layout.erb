@@ -18,6 +18,23 @@
   <title>Url Shortener With Users</title>
 </head>
 <body>
+<header>
+  <ul>
+    <% if !logged_in? %>
+    <li><a href="/">home</a></li>
+    <li><a href="/users/new">register</a></li>
+    <li><a href="/sessions/new">login</a></li>
+    <% else %>
+    <li><a href="/"><%= @user.username %></a></li>
+    <li><a href="/">home</a></li>
+    <li><form action="/sessions" method="post">
+      <input type="hidden" name="_method" value="DELETE">
+      <button type="submit">logout</button>
+    </form>
+     </li>
+    <% end %>
+    </ul>
+</header>
   <%= yield %>
 </body>
 </html>

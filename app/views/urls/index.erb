@@ -12,7 +12,7 @@
   <ul>
   <% end %>
       <% @urls.each do |url_object| %>
-      <li><%= url_object.long_url  %><br><a href="<%= url_object.short_url %>">http://localhost.9393/<%= url_object.short_url %></a>  Visit: <%= url_object.counter  %></li>
+      <li><%= url_object.long_url  %><br><a href="/urls/<%= url_object.short_url %>">http://localhost.9393/<%= url_object.short_url %></a>  Visit: <%= url_object.counter  %></li>
       <% end %>
   </ul>
 </div>
